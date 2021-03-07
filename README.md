@@ -25,7 +25,7 @@ Here's a walkthrough of implemented user stories:
 <img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
-#Twitter - Part I
+# *Twitter - Part I*
 
 **Name of your app** is a basic twitter app to read your tweets.
 
