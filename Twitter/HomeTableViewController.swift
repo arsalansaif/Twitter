@@ -1,6 +1,6 @@
 import UIKit
 class HomeTableViewController: UITableViewController {
-    var tweetArray = [NSDictionary()]
+    var tweetArray = [NSDictionary]()
     var numberOfTweet: Int!
     let myRefreshControl = UIRefreshControl()
     override func viewDidLoad() {
@@ -11,7 +11,7 @@ class HomeTableViewController: UITableViewController {
     }
     @objc func loadTweets(){
         numberOfTweet = 20
-        let myUrl = "https://api.twitter.com/1.1/statuses/update.json"
+        let myUrl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
         let myParams = ["count": numberOfTweet]
         TwitterAPICaller.client?.getDictionariesRequest(url: myUrl, parameters: myParams, success: { (tweets: [NSDictionary]) in
             self.tweetArray.removeAll()
@@ -25,7 +25,7 @@ class HomeTableViewController: UITableViewController {
         })
     }
     func loadMoreTweets(){
-        let myUrl = "https://api.twitter.com/1.1/statuses/update.json"
+        let myUrl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
         numberOfTweet = numberOfTweet + 20
         let myParams = ["count": numberOfTweet]
         TwitterAPICaller.client?.getDictionariesRequest(url: myUrl, parameters: myParams, success: { (tweets: [NSDictionary]) in
